@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{0A8E1FDA-8132-86F4-3326-D0C5361B670F}</ProjectGuid>
+    <ProjectGuid>{9C44C4D4-463A-3A8A-E8B3-9EBAB62A0F70}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -601,22 +601,24 @@
      <Compile Include="Assets\Behavior Designer\Runtime\Variables\SharedVector3.cs" />
      <Compile Include="Assets\Behavior Designer\Runtime\Variables\SharedVector3Int.cs" />
      <Compile Include="Assets\Behavior Designer\Runtime\Variables\SharedVector4.cs" />
+     <Compile Include="Assets\Scripts\AIArriveTo.cs" />
      <Compile Include="Assets\Scripts\AIAttributeComponent.cs" />
      <Compile Include="Assets\Scripts\AIAvoidObstacle.cs" />
      <Compile Include="Assets\Scripts\AIKeepMoving.cs" />
      <Compile Include="Assets\Scripts\AIObstacleAttr.cs" />
      <Compile Include="Assets\Scripts\BAForceRotate.cs" />
+     <Compile Include="Assets\Scripts\FollowMouseObject.cs" />
  <Reference Include="UnityEditor.StandardEvents">
- <HintPath>G:/GameDev/GitHub/SampleBehavior/SampleBehavior/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
+ <HintPath>G:/GameDev/GitHub/SampleBehaviorProject/SimpleBehaviorDesigner/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro.Editor">
- <HintPath>G:/GameDev/GitHub/SampleBehavior/SampleBehavior/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+ <HintPath>G:/GameDev/GitHub/SampleBehaviorProject/SimpleBehaviorDesigner/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.PackageManagerUI.Editor">
- <HintPath>G:/GameDev/GitHub/SampleBehavior/SampleBehavior/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+ <HintPath>G:/GameDev/GitHub/SampleBehaviorProject/SimpleBehaviorDesigner/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro">
- <HintPath>G:/GameDev/GitHub/SampleBehavior/SampleBehavior/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+ <HintPath>G:/GameDev/GitHub/SampleBehaviorProject/SimpleBehaviorDesigner/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.AIModule">
  <HintPath>G:/Tools/Unity2018/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -819,14 +821,14 @@
  <Reference Include="UnityEngine.SpatialTracking">
  <HintPath>G:/Tools/Unity2018/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
  </Reference>
+ <Reference Include="BehaviorDesigner.Runtime">
+ <HintPath>G:/GameDev/GitHub/SampleBehaviorProject/SimpleBehaviorDesigner/Assets/Behavior Designer/Runtime/BehaviorDesigner.Runtime.dll</HintPath>
+ </Reference>
  <Reference Include="UnityEngine.Analytics">
  <HintPath>C:/Users/kaleidosgu/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.analytics@2.0.16/UnityEngine.Analytics.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.StandardEvents">
  <HintPath>C:/Users/kaleidosgu/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.13/UnityEngine.StandardEvents.dll</HintPath>
- </Reference>
- <Reference Include="BehaviorDesigner.Runtime">
- <HintPath>G:/GameDev/GitHub/SampleBehavior/SampleBehavior/Assets/Behavior Designer/Runtime/BehaviorDesigner.Runtime.dll</HintPath>
  </Reference>
  <Reference Include="mscorlib">
  <HintPath>G:/Tools/Unity2018/Editor/Data/MonoBleedingEdge/lib/mono/unity/mscorlib.dll</HintPath>

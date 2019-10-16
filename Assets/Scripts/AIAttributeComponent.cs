@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class AIAttributeComponent : MonoBehaviour {
 
+    public float LowForceValue;
     public float ForceValue;
     public float LimitDistance;
     public float PowerForceValue;

@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{D385A94D-F7AC-ABAA-F8BF-BDE81F9288F6}</ProjectGuid>
+    <ProjectGuid>{9E0B966E-616C-A823-9A9A-F9D342DED55C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp-Editor</AssemblyName>
@@ -59,16 +59,16 @@
      <Compile Include="Assets\Behavior Designer\Editor\Object Drawers\IntSliderDrawer.cs" />
      <None Include="Assets\Behavior Designer\Editor\GridShader.shader" />
  <Reference Include="UnityEditor.StandardEvents">
- <HintPath>G:/GameDev/GitHub/SampleBehavior/SampleBehavior/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
+ <HintPath>G:/GameDev/GitHub/SampleBehaviorProject/SimpleBehaviorDesigner/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro.Editor">
- <HintPath>G:/GameDev/GitHub/SampleBehavior/SampleBehavior/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+ <HintPath>G:/GameDev/GitHub/SampleBehaviorProject/SimpleBehaviorDesigner/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.PackageManagerUI.Editor">
- <HintPath>G:/GameDev/GitHub/SampleBehavior/SampleBehavior/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+ <HintPath>G:/GameDev/GitHub/SampleBehaviorProject/SimpleBehaviorDesigner/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro">
- <HintPath>G:/GameDev/GitHub/SampleBehavior/SampleBehavior/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+ <HintPath>G:/GameDev/GitHub/SampleBehaviorProject/SimpleBehaviorDesigner/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.AIModule">
  <HintPath>G:/Tools/Unity2018/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -313,6 +313,12 @@
  <Reference Include="UnityEditor.WindowsStandalone.Extensions">
  <HintPath>G:/Tools/Unity2018/Editor/Data/PlaybackEngines/windowsstandalonesupport/UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
  </Reference>
+ <Reference Include="BehaviorDesigner.Editor">
+ <HintPath>G:/GameDev/GitHub/SampleBehaviorProject/SimpleBehaviorDesigner/Assets/Behavior Designer/Editor/BehaviorDesigner.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="BehaviorDesigner.Runtime">
+ <HintPath>G:/GameDev/GitHub/SampleBehaviorProject/SimpleBehaviorDesigner/Assets/Behavior Designer/Runtime/BehaviorDesigner.Runtime.dll</HintPath>
+ </Reference>
  <Reference Include="UnityEditor.Advertisements">
  <HintPath>C:/Users/kaleidosgu/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.ads@2.0.8/Editor/UnityEditor.Advertisements.dll</HintPath>
  </Reference>
@@ -327,12 +333,6 @@
  </Reference>
  <Reference Include="UnityEngine.StandardEvents">
  <HintPath>C:/Users/kaleidosgu/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.13/UnityEngine.StandardEvents.dll</HintPath>
- </Reference>
- <Reference Include="BehaviorDesigner.Editor">
- <HintPath>G:/GameDev/GitHub/SampleBehavior/SampleBehavior/Assets/Behavior Designer/Editor/BehaviorDesigner.Editor.dll</HintPath>
- </Reference>
- <Reference Include="BehaviorDesigner.Runtime">
- <HintPath>G:/GameDev/GitHub/SampleBehavior/SampleBehavior/Assets/Behavior Designer/Runtime/BehaviorDesigner.Runtime.dll</HintPath>
  </Reference>
  <Reference Include="mscorlib">
  <HintPath>G:/Tools/Unity2018/Editor/Data/MonoBleedingEdge/lib/mono/2.0-api/mscorlib.dll</HintPath>
@@ -364,7 +364,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp.csproj">
-      <Project>{0A8E1FDA-8132-86F4-3326-D0C5361B670F}</Project>      <Name>Assembly-CSharp</Name>    </ProjectReference>
+      <Project>{9C44C4D4-463A-3A8A-E8B3-9EBAB62A0F70}</Project>      <Name>Assembly-CSharp</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
