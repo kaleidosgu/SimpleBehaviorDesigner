@@ -124,31 +124,8 @@ class AIAvoidObstacle : Conditional
         }
         else if( bLeft )
         {
-            VecShared.Value = VirtualObject.Value.transform.position = new Vector3(_pol.bounds.max.x - m_widthCollider, _pol.bounds.center.y,vecHitObjPos.z);
+            VecShared.Value = VirtualObject.Value.transform.position = new Vector3(_pol.bounds.min.x - m_widthCollider, _pol.bounds.center.y,vecHitObjPos.z);
         }
-
-        //Vector3 vecPosUp = _hit2d.transform.position;
-        //vecPosUp.Set(vecPosUp.x, _pol.bounds.max.y + m_heightCollider, vecPosUp.z);
-        //Vector2 vecDirUp = (vecPosUp - transform.position).normalized;
-
-        //Vector3 vecPosDown = _hit2d.transform.position;
-        //vecPosDown.Set(vecPosDown.x, _pol.bounds.min.y - m_heightCollider, vecPosDown.z);
-        //Vector2 vecDirDown = (vecPosDown - transform.position).normalized;
-
-        //if(m_bReset == true)
-        //{
-        //    m_bReset = false;
-        //    float angleUp = Mathf.Acos(Vector3.Dot(transform.right, vecDirUp)) * Mathf.Rad2Deg;
-        //    float angleDown = Mathf.Acos(Vector3.Dot(transform.right, vecDirDown)) * Mathf.Rad2Deg;
-        //    if (angleUp > angleDown)
-        //    {
-        //        VecShared.Value = VirtualObject.Value.transform.position = new Vector3(vecPosDown.x, vecPosDown.y, vecPosDown.z);
-        //    }
-        //    else
-        //    {
-        //        VecShared.Value = VirtualObject.Value.transform.position = new Vector3(vecPosUp.x, vecPosUp.y, vecPosUp.z);
-        //    }
-        //}
         return TaskStatus.Success;
 
     }
