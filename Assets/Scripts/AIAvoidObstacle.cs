@@ -8,14 +8,12 @@ using BehaviorDesigner.Runtime.Tasks;
 class AIAvoidObstacle : Conditional
 {
     public SharedGameObject VirtualObject;
-    public SharedVector3 VecShared;
+    public SharedVector3 ShareDestPos;
+
     private Rigidbody2D m_rigidBody;
     private AIAttributeComponent m_attr;
-    private bool m_bHit;
-    private bool m_bReset;
-    private int m_nDot;
-    private float m_heightCollider;
-    private float m_widthCollider;
+    private float m_ColliderHeight;
+    private float m_ColliderWidth;
     public override TaskStatus OnUpdate()
     {
         bool bHit = false;
@@ -29,23 +27,21 @@ class AIAvoidObstacle : Conditional
         }
         if(bHit == false)
         {
-            m_bReset = true;
-            m_nDot = 0;
             m_attr.currentTime = 0.0f;
-            VecShared.Value = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 10));
+            ShareDestPos.Value = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 10));
             return TaskStatus.Failure;
         }
 
         PolygonCollider2D _pol = _hit2d.transform.GetComponent<PolygonCollider2D>();
 
-        float fLeftLength = _hit2d.point.x - _pol.bounds.min.x;
-        float fRightLength = _pol.bounds.max.x - _hit2d.point.x;
+        float fLengthWithLeft = _hit2d.point.x - _pol.bounds.min.x;
+        float fLengthWithRight = _pol.bounds.max.x - _hit2d.point.x;
 
         bool bLeft = false;
         bool bRight = false;
         bool bUp = false;
         bool bDown = false;
-        if ( fLeftLength < fRightLength )
+        if ( fLengthWithLeft < fLengthWithRight )
         {
             bLeft = true;
         }
@@ -54,9 +50,9 @@ class AIAvoidObstacle : Conditional
             bRight = true;
         }
 
-        float fDownLength = _hit2d.point.y - _pol.bounds.min.y;
-        float fUpLength = _pol.bounds.max.y - _hit2d.point.y;
-        if (fUpLength < fDownLength)
+        float fLengthWithDown = _hit2d.point.y - _pol.bounds.min.y;
+        float fLengthWithUp = _pol.bounds.max.y - _hit2d.point.y;
+        if (fLengthWithUp < fLengthWithDown)
         {
             bUp = true;
         }
@@ -112,19 +108,19 @@ class AIAvoidObstacle : Conditional
         Vector3 vecHitObjPos = _hit2d.transform.position;
         if ( bUp )
         {
-            VecShared.Value = VirtualObject.Value.transform.position = new Vector3(_pol.bounds.center.x, _pol.bounds.max.y + m_heightCollider, vecHitObjPos.z);
+            ShareDestPos.Value = VirtualObject.Value.transform.position = new Vector3(_pol.bounds.center.x, _pol.bounds.max.y + m_ColliderHeight, vecHitObjPos.z);
         }
         else if( bDown )
         {
-            VecShared.Value = VirtualObject.Value.transform.position = new Vector3(_pol.bounds.center.x, _pol.bounds.min.y - m_heightCollider, vecHitObjPos.z);
+            ShareDestPos.Value = VirtualObject.Value.transform.position = new Vector3(_pol.bounds.center.x, _pol.bounds.min.y - m_ColliderHeight, vecHitObjPos.z);
         }
         else if( bRight )
         {
-            VecShared.Value = VirtualObject.Value.transform.position = new Vector3(_pol.bounds.max.x + m_widthCollider, _pol.bounds.center.y,vecHitObjPos.z);
+            ShareDestPos.Value = VirtualObject.Value.transform.position = new Vector3(_pol.bounds.max.x + m_ColliderWidth, _pol.bounds.center.y,vecHitObjPos.z);
         }
         else if( bLeft )
         {
-            VecShared.Value = VirtualObject.Value.transform.position = new Vector3(_pol.bounds.min.x - m_widthCollider, _pol.bounds.center.y,vecHitObjPos.z);
+            ShareDestPos.Value = VirtualObject.Value.transform.position = new Vector3(_pol.bounds.min.x - m_ColliderWidth, _pol.bounds.center.y,vecHitObjPos.z);
         }
         return TaskStatus.Success;
 
@@ -135,8 +131,8 @@ class AIAvoidObstacle : Conditional
         m_rigidBody = transform.GetComponent<Rigidbody2D>();
         m_attr = transform.GetComponent<AIAttributeComponent>();
 
-        m_heightCollider = m_rigidBody.GetComponent<Collider2D>().bounds.size.y ;
-        m_widthCollider = m_rigidBody.GetComponent<Collider2D>().bounds.size.x;
+        m_ColliderHeight = m_rigidBody.GetComponent<Collider2D>().bounds.size.y ;
+        m_ColliderWidth = m_rigidBody.GetComponent<Collider2D>().bounds.size.x;
     }
 
     public override void OnReset()
