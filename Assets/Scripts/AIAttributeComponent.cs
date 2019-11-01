@@ -21,6 +21,9 @@ public class AIAttributeComponent : MonoBehaviour {
     public float currentTime;
     public float KeepMovingTime;
 
+    //设定临时目标后，表示AI达到位置的距离差
+    public float DistanceWithTempTarget;
+
     // Use this for initialization
     void Start () {
 		
