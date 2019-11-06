@@ -9,6 +9,7 @@ class AIArriveTo : Action
 {
     public SharedVector3 ShareDestPos;
     public Transform TransVisualizeTarget;
+    public SharedBool SharedBoolVO;
 
     private Rigidbody2D m_rigidBody;
     private AIAttributeComponent m_attr;
@@ -25,6 +26,7 @@ class AIArriveTo : Action
 
         if(fTargetDistance <= m_attr.DistanceWithTempTarget)
         {
+            SharedBoolVO.Value = false;
             return TaskStatus.Failure;
         }
         //如果x,y速度小于限定速度，那么就加力。

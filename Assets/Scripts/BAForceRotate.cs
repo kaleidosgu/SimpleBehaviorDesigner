@@ -7,21 +7,30 @@ using BehaviorDesigner.Runtime.Tasks;
 [TaskCategory("Custom/Action")]
 class BAForceRotate : Action
 {
-    public SharedVector3 ShareDestPos;
     public SharedGameObject VirtualObject;
+
+    public SharedBool SharedBoolAimVO;
 
     private Rigidbody2D m_rigidBody;
     private AIAttributeComponent m_attr;
     public override TaskStatus OnUpdate()
     {
         Vector3 vecPosTarget;
-        if(VirtualObject.Value != null)
+        if(SharedBoolAimVO.Value == true)
         {
-            vecPosTarget = VirtualObject.Value.transform.position;
+            if (VirtualObject.Value != null)
+            {
+                vecPosTarget = VirtualObject.Value.transform.position;
+            }
+            else
+            {
+                Debug.Assert(false);
+                vecPosTarget = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 10));
+            }
         }
         else
         {
-            vecPosTarget = ShareDestPos.Value;
+            vecPosTarget = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 10));
         }
         Vector2 vecDirToTarget = vecPosTarget - transform.position;
 

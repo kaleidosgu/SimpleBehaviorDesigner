@@ -9,6 +9,7 @@ class AIAvoidObstacle : Conditional
 {
     public SharedGameObject VirtualObject;
     public SharedVector3 ShareDestPos;
+    public SharedBool SharedBoolAimVO;
 
     private Rigidbody2D m_rigidBody;
     private AIAttributeComponent m_attr;
@@ -29,6 +30,7 @@ class AIAvoidObstacle : Conditional
         {
             m_attr.currentTime = 0.0f;
             ShareDestPos.Value = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 10));
+            SharedBoolAimVO.Value = false;
             return TaskStatus.Failure;
         }
 
@@ -122,6 +124,7 @@ class AIAvoidObstacle : Conditional
         {
             ShareDestPos.Value = VirtualObject.Value.transform.position = new Vector3(_pol.bounds.min.x - m_ColliderWidth, _pol.bounds.center.y,vecHitObjPos.z);
         }
+        SharedBoolAimVO.Value = true;
         return TaskStatus.Success;
 
     }
