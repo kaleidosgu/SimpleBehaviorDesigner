@@ -6,5 +6,6 @@ public class GroupAttribute : MonoBehaviour {
 
 	public float MoveForce;
 	public float rotatingSpeed;
+	public float LimitSpeed;
 	public Transform TargetFollow;
 }
