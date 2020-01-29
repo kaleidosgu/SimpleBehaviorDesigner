@@ -617,6 +617,8 @@
     <Compile Include="Assets\Scripts\AIObstacleAttr.cs" />
     <Compile Include="Assets\Scripts\BAForceRotate.cs" />
     <Compile Include="Assets\Scripts\FollowMouseObject.cs" />
+    <Compile Include="Assets\Scripts\GroupScript\FlockBehavior.cs" />
+    <Compile Include="Assets\Scripts\GroupScript\FlyGroup.cs" />
     <Compile Include="Assets\Scripts\GroupScript\GroupArriteTo.cs" />
     <Compile Include="Assets\Scripts\GroupScript\GroupAttribute.cs" />
     <Reference Include="Unity.Timeline.Editor">
