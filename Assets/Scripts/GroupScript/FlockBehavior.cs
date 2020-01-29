@@ -8,18 +8,25 @@ public class FlockBehavior : MonoBehaviour
     public float desiredSeparation;
     public float MaxForce;
     public float neighbordist;
+    public float BorderVallue;
     public Vector2 velocity;
+
+
     private Camera m_camera;
+    private Vector2 m_vcAcceleration;
     // Start is called before the first frame update
     void Start()
     {
-        velocity = new Vector2();
+        //float fVal = 0.5f;
+        //velocity = new Vector2(Random.Range(-fVal, fVal), Random.Range(-fVal, fVal));
         m_camera = Camera.main;
+        m_vcAcceleration = new Vector2();
     }
 
     public void AddForce(Vector3 vecForce)
     {
-        transform.position = transform.position + vecForce;
+        //transform.position = transform.position + vecForce;
+        m_vcAcceleration.Set(m_vcAcceleration.x + vecForce.x, m_vcAcceleration.y + vecForce.y);
     }
 
     public Vector3 separate(List <FlockBehavior> lstFlock)
@@ -136,8 +143,50 @@ public class FlockBehavior : MonoBehaviour
     }
     public void run(List<FlockBehavior> lstFlock)
     {
+        //Vector2 vecMouseWorld = Camera.main.ScreenToWorldPoint(Input.mousePosition + new Vector3(0.0f, 0.0f, -m_camera.transform.position.z));
+        //AddForce(seek(vecMouseWorld));
+        //flock(lstFlock);
+
+        //Vector2 vecMouseWorld = Camera.main.ScreenToWorldPoint(Input.mousePosition + new Vector3(0.0f, 0.0f, -m_camera.transform.position.z));
+        //AddForce(seek(vecMouseWorld));
+        //flock(lstFlock);
+        //updateVelocity();
+        //borders();
+
+        m_vcAcceleration.Set(0, 0);
         Vector2 vecMouseWorld = Camera.main.ScreenToWorldPoint(Input.mousePosition + new Vector3(0.0f, 0.0f, -m_camera.transform.position.z));
         AddForce(seek(vecMouseWorld));
-        flock(lstFlock);
+        Vector3 vecAcc = new Vector3(m_vcAcceleration.x, m_vcAcceleration.y, 0);
+        transform.position += vecAcc;
+    }
+    void borders()
+    {
+        if (transform.position.x < -BorderVallue)
+        {
+            transform.position = new Vector3(BorderVallue, transform.position.y, transform.position.z);
+        }
+
+        if (transform.position.y < -BorderVallue)
+        {
+            transform.position = new Vector3(transform.position.x, BorderVallue, transform.position.z);
+        }
+        if (transform.position.x > BorderVallue)
+        {
+            transform.position = new Vector3(-BorderVallue, transform.position.y, transform.position.z);
+        }
+        if (transform.position.y > BorderVallue)
+        {
+            transform.position = new Vector3(transform.position.x, -BorderVallue, transform.position.z);
+        }
+    }
+    void updateVelocity()
+    {
+        // Update velocity
+        velocity += (m_vcAcceleration);
+        // Limit speed
+        Vector2.ClampMagnitude(velocity, MoveSpeed);
+        transform.position += new Vector3(velocity.x, velocity.y,0);
+        // Reset accelertion to 0 each cycle
+        m_vcAcceleration.Set(0, 0);
     }
 }

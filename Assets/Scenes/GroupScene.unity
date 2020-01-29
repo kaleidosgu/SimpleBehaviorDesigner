@@ -499,6 +499,7 @@ MonoBehaviour:
   desiredSeparation: 0
   MaxForce: 2
   neighbordist: 0
+  BorderVallue: 0
   velocity: {x: 0, y: 0}
 --- !u!1 &1839601228
 GameObject:
@@ -525,7 +526,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1839601228}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.5483818, y: 0.42442608, z: 7.6085477}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -545,11 +546,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ObjCreate: {fileID: 5582767364665868369, guid: 36c60213be00b8544a47da4867405c90,
     type: 3}
-  CountsToCreate: 5
-  MoveSpeed: 0.05
-  desiredSeparation: 1
-  MaxForce: 1
-  neighborDist: 0.01
+  CountsToCreate: 1
+  MoveSpeed: 1
+  desiredSeparation: 0.2
+  MaxForce: 0.05
+  neighborDist: 5
+  BorderVallue: 6
 --- !u!1001 &5582767363968777895
 PrefabInstance:
   m_ObjectHideFlags: 0

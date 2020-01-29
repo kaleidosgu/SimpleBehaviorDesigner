@@ -11,6 +11,7 @@ public class FlyGroup : MonoBehaviour
     public float desiredSeparation;
     public float MaxForce;
     public float neighborDist;
+    public float BorderVallue;
 
     private List<FlockBehavior> m_lstFlock;
     // Start is called before the first frame update
@@ -29,6 +30,7 @@ public class FlyGroup : MonoBehaviour
                 _flock.desiredSeparation    = desiredSeparation;
                 _flock.MaxForce             = MaxForce;
                 _flock.neighbordist         = neighborDist;
+                _flock.BorderVallue         = BorderVallue;
                 m_lstFlock.Add(_flock);
             }
             else
