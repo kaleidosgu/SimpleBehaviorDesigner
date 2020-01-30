@@ -551,7 +551,7 @@ MonoBehaviour:
   desiredSeparation: 0.2
   MaxForce: 0.05
   neighborDist: 5
-  BorderVallue: 6
+  BorderVallue: 3
 --- !u!1001 &5582767363968777895
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -158,6 +158,8 @@ public class FlockBehavior : MonoBehaviour
         AddForce(seek(vecMouseWorld));
         Vector3 vecAcc = new Vector3(m_vcAcceleration.x, m_vcAcceleration.y, 0);
         transform.position += vecAcc;
+        transform.right = vecAcc.normalized;
+        borders();
     }
     void borders()
     {
