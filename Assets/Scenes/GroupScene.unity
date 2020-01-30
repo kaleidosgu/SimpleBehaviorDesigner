@@ -512,6 +512,7 @@ GameObject:
   - component: {fileID: 1839601229}
   - component: {fileID: 1839601230}
   - component: {fileID: 1839601231}
+  - component: {fileID: 1839601232}
   m_Layer: 0
   m_Name: FlyGroup
   m_TagString: Untagged
@@ -560,7 +561,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1839601228}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 88f8a8528687a1f429f9b49ed63e8314, type: 3}
   m_Name: 
@@ -569,3 +570,18 @@ MonoBehaviour:
     type: 3}
   CountsToCreate: 30
   RandomArea: 1
+--- !u!114 &1839601232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1839601228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ec9306b37bc3af4f8b68ae046c01937, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObjCreate: {fileID: 885386504323035044, guid: 7e6a8600097939443b7084e467d03ddf,
+    type: 3}
+  DistanceArea: 2

@@ -113,7 +113,20 @@ public class MovingObject : MonoBehaviour
         }
         else
         {
-            m_bTurn = false;
+            //if (m_timeToCheck >= TimeToCheck)
+            //{
+            //    m_timeToCheck -= TimeToCheck;
+            //    m_bTurn = false;
+            //}
+        }
+        if( m_bTurn == true)
+        {
+            m_timeToCheck += Time.deltaTime;
+            if (m_timeToCheck >= TimeToCheck)
+            {
+                m_timeToCheck -= TimeToCheck;
+                m_bTurn = false;
+            }
         }
     }
 }
