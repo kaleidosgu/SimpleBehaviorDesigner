@@ -619,8 +619,10 @@
     <Compile Include="Assets\Scripts\FollowMouseObject.cs" />
     <Compile Include="Assets\Scripts\GroupScript\FlockBehavior.cs" />
     <Compile Include="Assets\Scripts\GroupScript\FlyGroup.cs" />
+    <Compile Include="Assets\Scripts\GroupScript\FlyObjectGroup.cs" />
     <Compile Include="Assets\Scripts\GroupScript\GroupArriteTo.cs" />
     <Compile Include="Assets\Scripts\GroupScript\GroupAttribute.cs" />
+    <Compile Include="Assets\Scripts\GroupScript\MovingObject.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>D:/GameDev/GitSource/SimpleBD/SimpleBehaviorDesigner/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
